@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap");
+
+.contact {
+    margin-top: 100px;
+  /* height: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-form {
+  font-size: 3rem;
+}
+.contact-form h1 {
+  margin: 0 0;
+}
+.contact-form h6 {
+  margin: 6px 0;
+  margin-bottom: 60px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.form input {
+  margin: 15px 0;
+  font-size: 2rem;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button {
+  height: 52px;
+  width: 126px;
+  border-radius: 16px;
+  font-size: 2rem;
+  background: #e4c472;
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+button:hover {
+  background-color: #f0c14b;
+}
+
+h1,h6{
+  font-family: 'Patrick Hand', cursive;
+}
+@media screen and (max-width: 768px){
+    .contact-form{
+        font-size: 1rem;
+    }
+    .form input {
+        margin: 15px 0;
+        font-size: 1rem;
+      }
+}

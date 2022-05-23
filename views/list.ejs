@@ -1,0 +1,38 @@
+<%- include("header") -%>
+
+<div class="box" id="heading">
+  <h1> <%= subject %> </h1>
+</div>
+
+<div class="box">
+
+
+
+  <table>
+    <tr>
+      <th>Notes By</th>
+      <th>Professors Name </th>
+      <th>Date</th>
+      <th>Chapter Name</th>
+      <th>Title</th>
+      <th>Link</th>
+    </tr>
+    <% newListItems.forEach(function(item){ %>
+    <tr>
+      <td><%= item.yourname%></td>
+      <td><%= item.proffname%></td>
+      <td><%= item.date%></td>
+      <td><%= item.chapname %></td>
+      <td><%= item.linktitle%></td>
+      <td><a href=<%= item.link %>> Link </a></td>
+
+    </tr>
+    <% }) %>
+  </table>
+
+
+
+
+</div>
+
+<%- include("footer") -%>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Note Blocks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/loginstyles.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>NoteSaurus</h1>
+    <div class="card card-container">
+      <img class="notes" src="https://media0.giphy.com/media/pRtsn95fCBHcUBFfuc/200w.webp?cid=ecf05e473y2bqlojwclxs7tgh3y8rpff3bk37sthht5hl9zg&rid=200w.webp&ct=s" alt="">
+      <p id="profile-name" class="profile-name-card"></p>
+      <form action="/" class="form-signin" method="post">
+        <span id="reauth-email" class="reauth-email"></span>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="username" >
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" >
+        <div id="remember" class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block btn-signin" name="submit" type="submit">Log in</button>
+      </form>
+
+      <p class="preview">Preview website <a href="/contents" class="forgot-password"> Preview</a></p>
+
+
+    </div>
+  </div>
+</body>
+
+</html>

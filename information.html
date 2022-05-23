@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Subject Info</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/info.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>Enter The Information Regarding <br>The Notes</h1>
+    <div class="card card-container">
+
+      <p id="profile-name" class="profile-name-card">Please Enter All The Fields Specified</p>
+      <form action="/information" class="form-signin" method="post">
+        <span id="reauth-email" class="reauth-email"></span>
+        <input type="text" id="inputEmail" class="form-control" placeholder="Your name" name="your_name">
+        <input type="text" id="inputPassword" class="form-control" placeholder="Professors Name" name="professors_name">
+        <select class="select" name="subjects">
+          <option value="subject">Subject</option>
+          <option value="Physics-1">physics-1</option>
+          <option value="Physics-2">physics-2</option>
+          <option value="Chemistry">chemistry</option>
+          <option value="Computer Programming">computer programming</option>
+          <option value="Engineering Drawing">engineering drawing</option>
+          <option value="Communication Skill Workshop">communication skill workshop</option>
+          <option value="Mathematics-1">Mathematics-1</option>
+          <option value="Mathematics-2">Mathematics-2</option>
+          <option value="English Language And Composition">English Language And Composition</option>
+          <option value="Engineering Mechanics">Engineering Mechanics</option>
+          <option value="Ecology">Ecology</option>
+          <option value="Workshop">Workshop</option>
+        </select>
+        <input type="text" id="inputEmail" class="form-control date" placeholder="Date" name="date">
+        <input type="text" id="Chapter name" class="form-control" placeholder="Chapter name" name="chapter_name">
+        <input type="text" id="Link Title" class="form-control" placeholder="Link Title" name="link_title">
+        <input type="url" id="Notes Link" class="form-control notes" placeholder="Attach Link" name="notes_link">
+
+        <button id="add" class="btn btn-lg btn-primary btn-block btn-signin" name="submit" type="submit">Add to Notesaurus</button>
+
+      </form>
+      <a href="/contents" class="info_anchor">Back To Home</a>
+
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var button = document.querySelector("#add");
+    button.addEventListener("click", function() {
+
+      alert("THANKS FOR POSTING!!!");
+    });
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+.container2 {
+  position: relative;
+  min-height: calc(100vh-250px);
+  height: 100vh;
+  overflow-x: hidden;
+  display: block;
+  top: 72px;
+  color: #fafafa;
+}
