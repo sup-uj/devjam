@@ -38,10 +38,10 @@
       <div class="contact-form">
         <h1>Contact Us</h1>
         <h6>(If you have any questions feel free to contact us.)</h6>
-        <form action="mailto:patelsarthak421@gmail.com" method="post" enctype=”multipart/form-data” name="contact-form" class="form">
-          <input type="text" placeholder="Name" />
-          <input type="text" placeholder="Email" />
-          <input type="text" placeholder="Phone Number" />
+        <form action="/submitquery" method="post"  name="contact-form" class="form">
+          <input type="text" name="name" placeholder="Name" />
+          <input type="text" name="email" placeholder="Email" />
+          <input type="text" name="pnumber" placeholder="Phone Number" />
           <textarea name="area" id="area" cols="10" rows="10" placeholder="Suggest changes and queries!!!"></textarea>
           <div class="btn">
             <button type="submit">Submit</button>

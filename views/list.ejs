@@ -40,7 +40,7 @@
               <td><%= item.date%></td>
               <td><%= item.chapname %></td>
               <td><%= item.linktitle%></td>
-              <td><a href=<%= item.link %>> Link </a></td>
+              <td><a target="_blank" href=<%= item.link %>> Link </a></td>
               <td>
                 <form class="" action="/comment" method="post">
                   <button type="submit" name="button" value=<%= item._id %> class="comment">
@@ -57,7 +57,7 @@
         </table>
         <%if(newListItems.length===0){%>
         <div class="not_found">
-          <h2>RECORDS NOT FOUND</h2>
+          <h2>RECORDS NOT FOUND ???</h2>
         </div>
         <%}%>
 

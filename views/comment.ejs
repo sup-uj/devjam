@@ -5,14 +5,14 @@
 </div>
 
 <div class="box">
-  <% for(var i=0;i<newListItems.comment.length;i++){ %>
-  <div class="item">
-    <p><%= newListItems.comment[i]%></p>
-  </div>
-  <%}%>
+  <%newListItems.forEach(function(item){%>
+    <div class="item">
+      <p><%=item%></p>
 
+    </div>
+  <%})%>
 
-  <form class="item" action="/comment" method="post">
+  <form class="item" action="/addcomment" method="post">
     <input type="text" name="newItem" placeholder="Add comments" autocomplete="off">
     <button type="submit" name="list">+</button>
   </form>

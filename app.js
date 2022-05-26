@@ -4,6 +4,9 @@
 const express = require("express");
 const bodyparser = require("body-parser");
 const mongoose = require("mongoose");
+var filter = require('bad-words');
+
+
 
 
 const app = express();
@@ -44,6 +47,15 @@ const noteSchema = {
 };
 
 const Note = new mongoose.model("Note", noteSchema)
+
+const querySchema = {
+  name: String,
+  email: String,
+  phone:String,
+  query:String
+};
+
+const Query = new mongoose.model("Query", querySchema)
 
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "/index.html");
@@ -112,34 +124,67 @@ app.get("/list", function(req, res) {
 });
 
 app.get("/comment", function(req, res) {
-  Note.find({
-    _id: commentid
-  }, function(err, foundItems) {
+  Note.findOne({_id:commentid},function(err,founditems){
+    var array=founditems["comment"];
+    res.render("comment",{newListItems:array})
 
-    res.render("comment", {
-      listTitle: commentid,
-      newListItems: foundItems,
-    });
-
-  })
+  });
 
 });
 
+//******************************************************post *****************************************************************
 
 app.post("/list", function(req, res) {
-  console.log(req.body.button)
+  // console.log(req.body.button)
   filterbySubject = req.body.button
   res.redirect("/list")
 });
 
+app.post("/submitquery", function(req, res) {
+  // console.log(req.body)
+  const name=req.body.name
+  const email=req.body.email
+  const phone=req.body.pnumber
+  const query=req.body.area
+
+  const comm = new Query({
+    name: name,
+    email: email,
+    phone: phone,
+    query:query
+
+  })
+
+  comm.save()
+  res.redirect("/connect")
+});
+
 
 //comment post request
-app.post("/comment", function(req, res) {
-  commentid=req.body.button
 
+app.post("/comment", function(req, res) {
+  // console.log(req.body.button)
+  commentid=req.body.button
   res.redirect("/comment")
 
 });
+
+app.post("/addcomment", function(req, res) {
+  // console.log(req.body.button)
+  var newcomment=req.body.newItem
+  filt= new filter();
+  newcomment=filt.clean(newcomment);
+  console.log(newcomment);
+
+  Note.updateOne({_id:commentid},{ $push: { comment: [newcomment] } },function(err){
+    if(err) console.log(err);
+    else console.log("succesfully updated");
+  });
+  res.redirect("/comment")
+
+});
+
+
 
 
 app.post("/", function(req, res) {
