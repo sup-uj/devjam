@@ -1,38 +1,72 @@
 <%- include("header") -%>
 
-<div class="box" id="heading">
-  <h1> <%= subject %> </h1>
-</div>
+<div class="container2">
+  <div class="box3">
+    <div class="content">
+      <h1><%= subject %></h1>
 
-<div class="box">
-
-
-
-  <table>
-    <tr>
-      <th>Notes By</th>
-      <th>Professors Name </th>
-      <th>Date</th>
-      <th>Chapter Name</th>
-      <th>Title</th>
-      <th>Link</th>
-    </tr>
-    <% newListItems.forEach(function(item){ %>
-    <tr>
-      <td><%= item.yourname%></td>
-      <td><%= item.proffname%></td>
-      <td><%= item.date%></td>
-      <td><%= item.chapname %></td>
-      <td><%= item.linktitle%></td>
-      <td><a href=<%= item.link %>> Link </a></td>
-
-    </tr>
-    <% }) %>
-  </table>
+      <div class="search">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input id="search_member" type="text" placeholder="Search by notesaurus member"  onkeyup="searchfun()">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input id="search_proff" type="text" name="" placeholder="Search by proffesor's name" value="" onkeyup="searchfun1()">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input id="search_chapter" type="text" name="" placeholder="Search by chapter name" value="" onkeyup="searchfun1()">
 
 
+      </div>
+
+      <div class="table">
+
+        <table id="content-table">
+          <thead>
+            <tr>
+              <th>Notes By</th>
+              <th>Professors Name</th>
+              <th>Date</th>
+              <th>Chapter Name</th>
+              <th>Title</th>
+              <th>Link</th>
+              <th>Comments</th>
+
+            </tr>
+          </thead>
+          <tbody>
+
+            <% newListItems.forEach(function(item){ %>
+            <tr>
+              <td><%= item.yourname%></td>
+              <td><%= item.proffname%></td>
+              <td><%= item.date%></td>
+              <td><%= item.chapname %></td>
+              <td><%= item.linktitle%></td>
+              <td><a href=<%= item.link %>> Link </a></td>
+              <td>
+                <form class="" action="/comment" method="post">
+                  <button type="submit" name="button" value=<%= item._id %> class="comment">
+                    <i class="fa fa-comments fa-2x" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </td>
+
+            </tr>
+            <% }) %>
+
+          </tbody>
+
+        </table>
+        <%if(newListItems.length===0){%>
+        <div class="not_found">
+          <h2>RECORDS NOT FOUND</h2>
+        </div>
+        <%}%>
 
 
+
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <%- include("footer") -%>

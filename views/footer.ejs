@@ -1,9 +1,77 @@
+<script>
+    const searchfun = () => {
+      let filter = document.getElementById('search_member').value.toUpperCase();
+      let mytable = document.getElementById('content-table');
+      let tr = mytable.getElementsByTagName('tr');
+
+      console.log(filter);
+
+      for (var i = 0; i < tr.length; i++) {
+        let td = tr[i].getElementsByTagName('td')[0];
+          console.log("1");
+        if (td) {
+          console.log("2");
+          let textvalue = td.textContent;
+          if (textvalue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+
+        }
+      }
+    }
+
+    const searchfun1 = () => {
+      let filter = document.getElementById('search_proff').value.toUpperCase();
+      let mytable = document.getElementById('content-table');
+      let tr = mytable.getElementsByTagName('tr');
+
+      console.log(filter);
+
+      for (var i = 0; i < tr.length; i++) {
+        let td = tr[i].getElementsByTagName('td')[1];
+          console.log("1");
+        if (td) {
+          console.log("2");
+          let textvalue = td.textContent;
+          if (textvalue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+
+        }
+      }
+    }
+
+    const searchfun2 = () => {
+      let filter = document.getElementById('search_chapter').value.toUpperCase();
+      let mytable = document.getElementById('content-table');
+      let tr = mytable.getElementsByTagName('tr');
+
+      console.log(filter);
+
+      for (var i = 0; i < tr.length; i++) {
+        let td = tr[i].getElementsByTagName('td')[3];
+          console.log("1");
+        if (td) {
+          console.log("2");
+          let textvalue = td.textContent;
+          if (textvalue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+
+        }
+      }
+    }
+  </script>
 
 
 </body>
 
-<footer>
-  Copyright &copy; All in One Solution &nbsp All Rights Reserved!!
-</footer>
+
 
 </html>

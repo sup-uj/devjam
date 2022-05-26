@@ -2,14 +2,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap");
 
 .contact {
-    margin-top: 100px;
+    margin-top: 120px;
   /* height: 100vh; */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .contact-form {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 .contact-form h1 {
   margin: 0 0;
@@ -24,7 +24,7 @@
 }
 .form input {
   margin: 15px 0;
-  font-size: 2rem;
+  font-size: 1.3rem;
 }
 .btn {
   display: flex;
@@ -35,7 +35,7 @@ button {
   height: 52px;
   width: 126px;
   border-radius: 16px;
-  font-size: 2rem;
+  font-size: 1.6rem;
   background: #e4c472;
   border: 1px solid;
   margin-top: 10px;
@@ -47,8 +47,11 @@ button:hover {
   background-color: #f0c14b;
 }
 
-h1,h6{
-  font-family: 'Patrick Hand', cursive;
+#area::placeholder{
+  font-size: 1.3rem;
+  text-align:center;
+  margin-top: 20px;
+
 }
 @media screen and (max-width: 768px){
     .contact-form{
