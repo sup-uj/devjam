@@ -20,9 +20,9 @@
       <p id="profile-name" class="profile-name-card">Please Enter All The Fields Specified</p>
       <form action="/information" class="form-signin" method="post">
         <span id="reauth-email" class="reauth-email"></span>
-        <input type="text" id="inputEmail" class="form-control" placeholder="Your name" name="your_name">
-        <input type="text" id="inputPassword" class="form-control" placeholder="Professors Name" name="professors_name">
-        <select class="select" name="subjects">
+        <input  type="text" id="your_name" class="form-control your_name" placeholder="Your name" name="your_name">
+        <input autocomplete="off" type="text" id="professors_name" class="form-control professors_name" placeholder="Professors Name" name="professors_name">
+        <select id="subjectchoice" class="select" name="subjects">
           <option value="subject">Subject</option>
           <option value="Physics">physics</option>
 
@@ -37,10 +37,10 @@
           <option value="Ecology">Ecology</option>
           <option value="Workshop">Workshop</option>
         </select>
-        <input type="text" id="inputEmail" class="form-control date" placeholder="Date" name="date">
-        <input type="text" id="Chapter name" class="form-control" placeholder="Chapter name" name="chapter_name">
-        <input type="text" id="Link Title" class="form-control" placeholder="Link Title" name="link_title">
-        <input type="url" id="Notes Link" class="form-control notes" placeholder="Attach Link" name="notes_link">
+        <input autocomplete="off" type="text" id="date" class="form-control date" placeholder="Date" name="date">
+        <input autocomplete="off" type="text" id="Chapter name" class="form-control chapter_name" placeholder="Chapter name" name="chapter_name">
+        <input autocomplete="off" type="text" id="Link Title" class="form-control link_title" placeholder="Link Title" name="link_title">
+        <input autocomplete="off" type="url" id="Notes Link" class="form-control notes notes_link" placeholder="Attach Link" name="notes_link">
 
         <button id="add" class="btn btn-lg btn-primary btn-block btn-signin" name="submit" type="submit">Add to Notesaurus</button>
 
@@ -51,12 +51,56 @@
   </div>
 
   <script type="text/javascript">
+    var yourname = document.getElementById("your_name").value;
+    var profname=document.getElementById("professors_name").value;
+    var subjectchoice=document.getElementById("subjectchoice").value;
+    var date=document.getElementById("date").value;
+    var chapter_name=document.getElementById("Chapter name").value;
+    var link_title=document.getElementById("Link Title").value;
+    var notes_link=document.getElementById("your_name").value;
+
+    // console.log(yourname);
+    // console.log(profname);
+    // console.log(subjectchoice);
+    // console.log(date);
+    // console.log(chapter_name);
+    // console.log(link_title);
+    // console.log(notes_link);
+
     var button = document.querySelector("#add");
     button.addEventListener("click", function() {
-
       alert("THANKS FOR POSTING!!!");
+      // if(yourname!="" && profname!="" && notes_link!="" && subjectchoice!="" && date!="" && chapter_name!="" && link_title!="" ){
+      // alert("THANKS FOR POSTING!!!");
+      // }
+      //
+      // else{
+      //   alert("Please enter all the fields specified!!!");
+      // }
     });
 
+    // if(yourname!="" && profname!="" && notes_link!="" && subjectchoice!="" && date!="" && chapter_name!="" && link_title!="" ){
+    //   var button = document.querySelector("#add");
+    //
+    //   button.addEventListener("click", function() {
+    //
+    //     alert("THANKS FOR POSTING!!!");
+    //   });
+    // }
+    // else{
+    //   var button = document.querySelector("#add");
+    //
+    //   button.addEventListener("click", function() {
+    //
+    //     alert("please enter all the fields!!!");
+    //   });
+    // }
+    // var button = document.querySelector("#add");
+    //
+    // button.addEventListener("click", function() {
+    //
+    //   alert("THANKS FOR POSTING!!!");
+    // });
   </script>
 </body>
 

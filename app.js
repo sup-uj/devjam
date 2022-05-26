@@ -92,6 +92,20 @@ app.post("/information", function(req, res) {
   const linktitle = req.body.link_title
   const link = req.body.notes_link
 
+  // if(yourname!=null && proffname!=null && subject!=null && date!=null && chapname!=null && linktitle!=null   && link!=null ){
+  //   console.log("info added");
+  //   const note = new Note({
+  //     yourname: yourname,
+  //     proffname: proffname,
+  //     subject: subject,
+  //     date: date,
+  //     chapname: chapname,
+  //     linktitle: linktitle,
+  //     link: link
+  //   })
+  //
+  //   note.save();
+  // }
 
   const note = new Note({
     yourname: yourname,
